@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Namma-Shaale Inventory - Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#865400",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-surface-variant": "#424752",
+                      "on-surface": "#0b1c30",
+                      "on-secondary-fixed-variant": "#00522d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#ffd29e",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "inverse-on-surface": "#eaf1ff",
+                      "outline-variant": "#c2c6d4",
+                      "surface-container-low": "#eff4ff",
+                      "on-secondary-fixed": "#00210f",
+                      "tertiary": "#663f00",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary-fixed-dim": "#a9c7ff",
+                      "on-tertiary-fixed": "#2a1700",
+                      "outline": "#727783",
+                      "inverse-surface": "#213145",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "surface-variant": "#d3e4fe",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#c8daff",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#7ed99e",
+                      "on-secondary-container": "#047240",
+                      "secondary-fixed": "#9af6b8",
+                      "inverse-primary": "#a9c7ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#d6e3ff",
+                      "surface": "#f8f9ff",
+                      "on-primary-fixed": "#001b3d",
+                      "secondary-container": "#97f3b5",
+                      "surface-container": "#e5eeff",
+                      "surface-tint": "#005db6",
+                      "on-primary": "#ffffff",
+                      "secondary": "#006d3d",
+                      "primary": "#00478d",
+                      "surface-dim": "#cbdbf5",
+                      "background": "#f8f9ff",
+                      "on-primary-fixed-variant": "#00468c",
+                      "primary-container": "#005eb8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "touch-target-min": "48px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "card-padding": "20px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Public Sans"
+                      ],
+                      "display-lg": [
+                              "Public Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-lg": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .qr-pattern {
+            background-image: radial-gradient(#00478d 1px, transparent 1px);
+            background-size: 16px 16px;
+            opacity: 0.05;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-safe pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-background bg-surface-container-low dark:bg-surface-container shadow-sm flex items-center justify-between px-margin-mobile h-touch-target-min w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-title-lg text-title-lg overflow-hidden relative">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="A close-up, brightly lit portrait of a professional school administrator smiling warmly. The setting suggests a modern educational environment with soft, diffused light mode aesthetics. The color palette is composed of crisp whites, soft grays, and a touch of deep blue, embodying a clean, trustworthy Gov-Tech style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf3XgjWH15gb-b0Uud_a1_7pBQLKcW2a5FKqBuTe9RXUTqaikOZ0lr93gBX_oWcSvoEe3_Id-58Qnp2y6UfAMN2svOJ4ywfGXOeQipPR6MXp610jYBhNaBUzub8kyw3srfQlHHiUh1n_AKI0QCyK5hYjXoYqeYgz0WOLiqrH5D6dnPoSOBTRgd-Xt52ngzmKBOrtJx443PdVbJR7zxdPl5ih9tZc_xLabCIAr9i2kgo-wQRqgg3FjcCtaukCWUGl_txtBjoaI1fWA"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Notifications</h1>
+</div>
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center text-primary dark:text-primary-fixed-dim hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="pt-20 px-margin-mobile max-w-3xl mx-auto space-y-6">
+<!-- Header Actions & Tabs -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h2 class="font-title-lg text-title-lg text-on-surface">Recent Alerts</h2>
+<button class="font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+                    Mark all as read
+                </button>
+</div>
+<div class="flex gap-2 border-b border-outline-variant pb-1 overflow-x-auto no-scrollbar">
+<button class="px-4 py-2 font-label-md text-label-md border-b-2 border-primary text-primary transition-colors whitespace-nowrap">All</button>
+<button class="px-4 py-2 font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap">Unread</button>
+<button class="px-4 py-2 font-label-md text-label-md border-b-2 border-transparent text-error hover:text-on-error-container transition-colors whitespace-nowrap">Critical</button>
+</div>
+</div>
+<!-- Notifications List -->
+<div class="space-y-3">
+<!-- Item 1: Critical (Unread) -->
+<div class="bg-surface-container-low rounded-xl p-card-padding flex gap-4 relative overflow-hidden group cursor-pointer hover:bg-surface-container transition-colors border border-outline-variant/30">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="absolute top-4 right-4 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div class="flex-grow pr-6">
+<div class="flex items-baseline justify-between mb-1">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Monthly Audit Pending</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">10m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Block 4 audit is due in 2 days. 45 items remaining.</p>
+</div>
+</div>
+<!-- Item 2: Update (Unread) -->
+<div class="bg-surface-container-low rounded-xl p-card-padding flex gap-4 relative overflow-hidden group cursor-pointer hover:bg-surface-container transition-colors border border-outline-variant/30">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="absolute top-4 right-4 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+</div>
+<div class="flex-grow pr-6">
+<div class="flex items-baseline justify-between mb-1">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Repair Approved</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">1h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The request for Olympus CX23 Microscope has been approved by SDMC.</p>
+</div>
+</div>
+<!-- Item 3: Alert (Read) -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding flex gap-4 relative overflow-hidden group cursor-pointer hover:bg-surface-container-low transition-colors border border-outline-variant/20">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="error">error</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-baseline justify-between mb-1">
+<h3 class="font-body-lg text-body-lg text-on-surface">Missing Item Reported</h3>
+<span class="font-label-md text-label-md text-outline">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-outline">A Dell Latitude Tablet has been marked as missing in Grade 10-A.</p>
+</div>
+</div>
+<!-- Item 4: System (Read) -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding flex gap-4 relative overflow-hidden group cursor-pointer hover:bg-surface-container-low transition-colors border border-outline-variant/20">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-baseline justify-between mb-1">
+<h3 class="font-body-lg text-body-lg text-on-surface">New Asset Added</h3>
+<span class="font-label-md text-label-md text-outline">Mon, 10:45 AM</span>
+</div>
+<p class="font-body-md text-body-md text-outline">15 new Student Desks have been successfully added to the inventory.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 pb-safe bg-surface dark:bg-background bg-surface-container dark:bg-surface-container-low shadow-[0_-1px_4px_rgba(0,0,0,0.04)] shadow-lg rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-lg text-label-lg mt-1">Assets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span class="font-label-lg text-label-lg mt-1">Audit</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-lg text-label-lg mt-1">Reports</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-lg text-label-lg mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

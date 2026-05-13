@@ -1,0 +1,8 @@
+com.nammashaale.app:string/app_name = 0x7f040000
+com.nammashaale.app:mipmap/ic_launcher_round = 0x7f030001
+com.nammashaale.app:mipmap/ic_launcher = 0x7f030000
+com.nammashaale.app:color/ns_navigation = 0x7f010001
+com.nammashaale.app:drawable/ic_launcher_foreground = 0x7f020000
+com.nammashaale.app:color/ns_primary = 0x7f010002
+com.nammashaale.app:style/Theme.NammaShaale = 0x7f050000
+com.nammashaale.app:color/ns_background = 0x7f010000

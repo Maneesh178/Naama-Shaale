@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Namma-Shaale Inventory - Asset List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container": "#e5eeff",
+                      "on-secondary-fixed-variant": "#00522d",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#00210f",
+                      "on-background": "#0b1c30",
+                      "primary-fixed-dim": "#a9c7ff",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary-fixed-variant": "#00468c",
+                      "tertiary": "#663f00",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-surface": "#0b1c30",
+                      "surface-bright": "#f8f9ff",
+                      "surface-tint": "#005db6",
+                      "primary": "#00478d",
+                      "outline-variant": "#c2c6d4",
+                      "secondary": "#006d3d",
+                      "on-secondary-container": "#047240",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#424752",
+                      "secondary-fixed": "#9af6b8",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#7ed99e",
+                      "primary-fixed": "#d6e3ff",
+                      "inverse-surface": "#213145",
+                      "background": "#f8f9ff",
+                      "inverse-primary": "#a9c7ff",
+                      "on-primary-container": "#c8daff",
+                      "on-tertiary-fixed": "#2a1700",
+                      "outline": "#727783",
+                      "surface-variant": "#d3e4fe",
+                      "secondary-container": "#97f3b5",
+                      "surface-dim": "#cbdbf5",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#001b3d",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-high": "#dce9ff",
+                      "surface": "#f8f9ff",
+                      "on-tertiary-container": "#ffd29e",
+                      "tertiary-container": "#865400",
+                      "primary-container": "#005eb8",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#653e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "20px",
+                      "touch-target-min": "48px",
+                      "base": "8px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Public Sans"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Public Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-lg": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .qr-pattern {
+            background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.05;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm text-primary">
+<div class="flex items-center justify-between px-margin-mobile h-touch-target-min w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img alt="Avatar" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a female school administrator with a warm smile. She is wearing a modern, subtle blue blazer. The background is a clean, bright school hallway, softly out of focus. The overall tone is approachable and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJiEJbBz6lM9Vf-OAlppvaCaZqTTC_a7soX5Jkn7jLse41N_vJOK7cngCVa1l3eHKGGYmB-pBZ5TR2p4e6l3OC0xkjmpodVBtNYAEqqCfkUiggcVFMB7LWu2tgBt2BhnGLiHcaMrdpZ960F48wZj4qzzJ0meav6UVrcVy-ciESBNxCF8443p1caotKis_fISGNeFHH3xq9lysOzs8Z8ygLVOMLKm7LAbUWHt__5W382eanpyLENxt_cX5rVd0dB8NSM3k4oCRA6L0"/>
+<h1 class="font-headline-md text-headline-md">Namma-Shaale Inventory</h1>
+</div>
+<button class="w-12 h-12 flex items-center justify-center hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px] px-margin-mobile max-w-7xl mx-auto w-full relative">
+<div class="absolute top-0 left-0 w-full h-32 qr-pattern pointer-events-none text-primary"></div>
+<!-- Search Bar -->
+<div class="relative w-full mb-6 z-10">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border-0 border-b border-outline-variant rounded-t-lg focus:ring-0 focus:border-primary font-body-lg text-on-surface shadow-sm" placeholder="Search assets by name or ID..." type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-4 mb-2 no-scrollbar z-10 relative">
+<button class="px-4 h-8 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg whitespace-nowrap shadow-sm">All Assets</button>
+<button class="px-4 h-8 rounded-lg bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-lg text-label-lg whitespace-nowrap hover:bg-surface-container">Working</button>
+<button class="px-4 h-8 rounded-lg bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-lg text-label-lg whitespace-nowrap hover:bg-surface-container">Needs Repair</button>
+<button class="px-4 h-8 rounded-lg bg-surface-container-low text-on-surface-variant border border-outline-variant font-label-lg text-label-lg whitespace-nowrap hover:bg-surface-container">Missing</button>
+</div>
+<!-- Bento Grid / Asset List -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 z-10 relative">
+<!-- Asset Card 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-card-padding border border-surface-container-highest shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Cricket Kit" class="w-full h-full object-cover" data-alt="A close-up photograph of a professional cricket bat resting on top of leather cricket balls inside a green canvas duffle bag. The lighting is bright and evenly distributed, highlighting the texture of the wood and leather. The background is slightly blurred, suggesting a sunny school sports field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvpyl9SrBOQPG3ucmG_uXgSmDbfCeZBMTWUQWfyuxIbbOE2jFyc_b8wmrcnB_6q2f28KPL9zM2Mx36G_GJxGvlWFunq9K_OLHf8XJIrhAosbnkDpWHe8AVHSorG2f17vU0QmFKFGntdrdUxRnBhUsgiXZUA0P06ZZKwKZ6BWHTqKKymZVhwSGDg0QgMZ414ZQ6LyqJxOui_URfjzzHs3tTmFQXxObVHhDy22v4_F_ivpdpciKTnw8pah0z-fyXz5v_AONgdugkg2M"/>
+</div>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#E6F4EA] text-[#137333] font-label-md text-label-md gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                        Working
+                    </span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Cricket Kit Full</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">ID: NS-SPT-2023-041</p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex justify-between items-center">
+<p class="font-label-md text-label-md text-outline">Checked: 12 Oct 2023</p>
+<button class="text-primary hover:bg-surface-container p-2 rounded-full">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Asset Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-card-padding border border-surface-container-highest shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Lab Microscope" class="w-full h-full object-cover" data-alt="A modern optical microscope sitting on a clean, white laboratory bench. The microscope is metallic grey with blue accents. The background features blurred glass beakers and test tubes under cool, sterile fluorescent lighting, creating a clinical, educational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbI-UFt4GKmNc0l5OnhvPQttHHIyzxElpKwzb49ITOewY5N06gZbHUZIOInKUiInV_ahIirMey4Ewc2vNiq0TTcPBRJBLCn5IYUHM5i62ZV51DATq4pYpQss0L6996xiCYTKa3ZXBYA-u6iQktIYVIqxq3p4hq0B3YdNkNAVPi8CRZyeKOoPI13_L7RhMwXkdowIqReHO0b5EiaiDmIPo4PVsr_ZGmk7Zt7S19my57CO5I1tojYOs-8A92FhcJrMM1Gat_JfkqvjA"/>
+</div>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#FEF7E0] text-[#B06000] font-label-md text-label-md gap-1">
+<span class="material-symbols-outlined text-[14px]">build</span>
+                        Repair
+                    </span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Olympus CX23 Microscope</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">ID: NS-LAB-2021-012</p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex justify-between items-center">
+<p class="font-label-md text-label-md text-outline">Checked: 05 Sep 2023</p>
+<button class="text-primary hover:bg-surface-container p-2 rounded-full">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Asset Card 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-card-padding border border-surface-container-highest shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden flex-shrink-0 flex items-center justify-center bg-surface-container-high text-outline">
+<span class="material-symbols-outlined text-[32px]">laptop_chromebook</span>
+</div>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#FCE8E6] text-[#A50E0E] font-label-md text-label-md gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                        Missing
+                    </span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Dell Latitude 3420</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">ID: NS-IT-2022-088</p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-container-highest flex justify-between items-center">
+<p class="font-label-md text-label-md text-outline">Checked: 22 Aug 2023</p>
+<button class="text-primary hover:bg-surface-container p-2 rounded-full">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-4 md:right-8 w-14 h-14 bg-primary-container text-on-primary-container rounded-2xl shadow-[0_4px_8px_rgba(0,0,0,0.08)] flex items-center justify-center hover:bg-surface-variant transition-colors active:scale-95 z-40">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface shadow-[0_-1px_4px_rgba(0,0,0,0.04)] md:hidden">
+<div class="flex justify-around items-center px-2 py-2 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-16 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:bg-surface-variant transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-lg text-label-lg mt-1">Assets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-16 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="font-label-lg text-label-lg mt-1">Audit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-16 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-lg text-label-lg mt-1">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform w-16 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-lg text-label-lg mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

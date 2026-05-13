@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ns_background">#F8F9FF</color>
+    <color name="ns_navigation">#E5EEFF</color>
+    <color name="ns_primary">#00478D</color>
+    <string name="app_name">Namma Shaale</string>
+    <style name="Theme.NammaShaale" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/ns_background</item>
+        <item name="android:navigationBarColor">@color/ns_navigation</item>
+    </style>
+</resources>

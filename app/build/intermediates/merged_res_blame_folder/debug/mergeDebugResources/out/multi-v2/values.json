@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.nammashaale.app-mergeDebugResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Admin\\OneDrive\\Documents\\New project\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "49",
+                        "endOffsets": "61"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "196",
+                        "endColumns": "49",
+                        "endOffsets": "241"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Admin\\OneDrive\\Documents\\New project\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "2,3,1",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "61,109,16",
+                        "endColumns": "47,47,44",
+                        "endOffsets": "104,152,56"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,103,151",
+                        "endColumns": "47,47,44",
+                        "endOffsets": "98,146,191"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Admin\\OneDrive\\Documents\\New project\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "379"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "246",
+                        "endLines": "11",
+                        "endColumns": "12",
+                        "endOffsets": "609"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.NammaShaale" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/ns_background</item>
+        <item name="android:navigationBarColor">@color/ns_navigation</item>
+    </style>
+</resources>

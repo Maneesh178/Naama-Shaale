@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Namma-Shaale Inventory - Home Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Public Sans (Display/Headline), Inter (Title/Body/Label) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Brand Anchors -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#00522d",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#00210f",
+                    "on-background": "#0b1c30",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed-variant": "#00468c",
+                    "tertiary": "#663f00",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface": "#0b1c30",
+                    "surface-bright": "#f8f9ff",
+                    "surface-tint": "#005db6",
+                    "primary": "#00478d",
+                    "outline-variant": "#c2c6d4",
+                    "secondary": "#006d3d",
+                    "on-secondary-container": "#047240",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#424752",
+                    "secondary-fixed": "#9af6b8",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#7ed99e",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-surface": "#213145",
+                    "background": "#f8f9ff",
+                    "inverse-primary": "#a9c7ff",
+                    "on-primary-container": "#c8daff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline": "#727783",
+                    "surface-variant": "#d3e4fe",
+                    "secondary-container": "#97f3b5",
+                    "surface-dim": "#cbdbf5",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#001b3d",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-high": "#dce9ff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-container": "#ffd29e",
+                    "tertiary-container": "#865400",
+                    "primary-container": "#005eb8",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#653e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-padding": "20px",
+                    "touch-target-min": "48px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "headline-md": ["Public Sans"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Public Sans"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* QR-inspired subtle background pattern for header area */
+        .bg-qr-pattern {
+            background-image: radial-gradient(var(--tw-colors-primary) 1px, transparent 1px), radial-gradient(var(--tw-colors-primary) 1px, transparent 1px);
+            background-position: 0 0, 12px 12px;
+            background-size: 24px 24px;
+            opacity: 0.03;
+        }
+        /* Hide scrollbar for clean quick actions */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-[80px] pt-[72px]">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-background bg-surface-container-low dark:bg-surface-container shadow-sm flex items-center justify-between px-margin-mobile h-touch-target-min w-full max-w-7xl mx-auto border-none">
+<div class="flex items-center gap-3">
+<img alt="School Administrator Profile" class="w-8 h-8 rounded-full shadow-sm" data-alt="A small, circular avatar portrait of a professional Indian school administrator, featuring a warm smile, set against a light blue, modern tech background with soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBev5jCFMtGOQiy9TwnHUmDFB5-FHVQZcReE3XTvd7nSILPTWt-WrNaiIiy9Tb8l64S4KrspaX05nR5aIaSaNT4RL3s-TVWKx309TGYpQFCpWxPVAdMDOcnTF64sRtuo3F9sDLKNDgkkVUIDH1-4AOWM6IotOmF7GCdFQ8NQrK1dhaUINNzzwCqULdc-JbIHLscP8-DYXC47XQwhuo_6Pggme92hcKrGdqvcouC_wQYRG22eajxjg0V4Y5rM5r2ViHs6X0kN17HyDw"/>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Namma-Shaale Inventory</h1>
+</div>
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant dark:text-outline hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-margin-mobile relative">
+<!-- Abstract Header Background Pattern -->
+<div class="absolute top-0 left-0 w-full h-48 bg-qr-pattern pointer-events-none rounded-b-3xl"></div>
+<!-- Welcome Section -->
+<section class="relative z-10 pt-6 pb-4">
+<h2 class="font-display-lg text-display-lg text-primary mb-1">Namaste, Mrs. Sharma!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" style="font-size: 20px;">school</span>
+                Government Higher Primary School, Block 4
+            </p>
+</section>
+<!-- Quick Actions Row -->
+<section class="py-4 relative z-10">
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2 snap-x">
+<!-- Action 1 -->
+<button class="flex flex-col items-center gap-2 min-w-[80px] snap-start group">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm group-hover:bg-surface-tint group-hover:text-on-primary transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 28px;">qr_code_scanner</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Scan QR</span>
+</button>
+<!-- Action 2 -->
+<button class="flex flex-col items-center gap-2 min-w-[80px] snap-start group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-primary flex items-center justify-center shadow-sm group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 28px;">add_box</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Add Asset</span>
+</button>
+<!-- Action 3 -->
+<button class="flex flex-col items-center gap-2 min-w-[80px] snap-start group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-primary flex items-center justify-center shadow-sm group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 28px;">health_and_safety</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Health Check</span>
+</button>
+<!-- Action 4 -->
+<button class="flex flex-col items-center gap-2 min-w-[80px] snap-start group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-primary flex items-center justify-center shadow-sm group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 28px;">description</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Reports</span>
+</button>
+</div>
+</section>
+<!-- Summary Cards Grid (Bento Style) -->
+<section class="py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Total Assets -->
+<div class="col-span-2 md:col-span-1 bg-surface-container-lowest rounded-[24px] p-5 shadow-[0_2px_4px_rgba(0,0,0,0.04)] border border-outline-variant/50 relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+<div class="flex justify-between items-start">
+<span class="font-title-lg text-title-lg text-on-surface">Total Assets</span>
+<div class="w-8 h-8 rounded-full bg-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+</div>
+</div>
+<div class="font-display-lg text-display-lg text-primary mt-2">1,248</div>
+</div>
+<!-- Working -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_2px_4px_rgba(0,0,0,0.04)] border border-outline-variant/50 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Working</span>
+</div>
+<div class="font-title-lg text-title-lg text-on-surface">1,102</div>
+</div>
+<!-- Needs Repair -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_2px_4px_rgba(0,0,0,0.04)] border border-outline-variant/50 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Needs Repair</span>
+</div>
+<div class="font-title-lg text-title-lg text-on-surface">134</div>
+</div>
+<!-- Missing -->
+<div class="col-span-2 md:col-span-1 bg-error-container rounded-[24px] p-4 shadow-[0_2px_4px_rgba(0,0,0,0.04)] flex flex-col justify-between border border-error/20">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-lg text-label-lg text-on-error-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                        Missing
+                    </span>
+</div>
+<div class="font-title-lg text-title-lg text-error">12</div>
+</div>
+</section>
+<!-- Monthly Audit Progress -->
+<section class="py-4">
+<div class="bg-surface-container-lowest rounded-[24px] p-card-padding shadow-[0_2px_4px_rgba(0,0,0,0.04)] border border-outline-variant/50 flex items-center justify-between">
+<div class="flex-1 pr-4">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Monthly Audit Progress</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Complete checking physical assets for October.</p>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-6 py-3 rounded-full hover:bg-surface-tint transition-colors active:scale-95 h-[48px] inline-flex items-center justify-center shadow-sm">
+                        Continue Audit
+                    </button>
+</div>
+<!-- Circular Progress Ring via Conic Gradient -->
+<div class="relative w-24 h-24 rounded-full flex items-center justify-center shrink-0" style="background: conic-gradient(var(--tw-colors-primary) 65%, var(--tw-colors-surface-container-high) 0);">
+<div class="absolute inset-2 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-inner">
+<span class="font-title-lg text-title-lg text-primary">65%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity List -->
+<section class="py-4">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-title-lg text-title-lg text-on-surface">Recent Activity</h3>
+<button class="font-label-lg text-label-lg text-primary hover:text-surface-tint p-2 -mr-2">View All</button>
+</div>
+<div class="flex flex-col gap-2">
+<!-- List Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex items-center gap-4 min-h-[72px] border border-outline-variant/30 hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">chair_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-title-lg text-[16px] text-on-surface truncate">Classroom Chair (Wooden)</h4>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Marked as 'Needs Repair'</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md text-outline">2 hrs ago</span>
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex items-center gap-4 min-h-[72px] border border-outline-variant/30 hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">science</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-title-lg text-[16px] text-on-surface truncate">Microscope - Lab B</h4>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Added new asset</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md text-outline">Yesterday</span>
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex items-center gap-4 min-h-[72px] border border-outline-variant/30 hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-title-lg text-[16px] text-on-surface truncate">Library Book Bundle</h4>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Verified during audit</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md text-outline">Yesterday</span>
+<span class="material-symbols-outlined text-outline mt-1 text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shared Component -->
+<!-- Active Tab Logic applied to "Home" -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-background bg-surface-container dark:bg-surface-container-low shadow-[0_-1px_4px_rgba(0,0,0,0.04)] shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 pb-safe border-none border-t-0 border-b-0">
+<!-- Tab: Home (ACTIVE) -->
+<button class="flex flex-col items-center justify-center flex-1 py-1 active:scale-90 transition-transform hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors rounded-xl">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 mb-1 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Home</span>
+</button>
+<!-- Tab: Assets (INACTIVE) -->
+<button class="flex flex-col items-center justify-center flex-1 py-1 active:scale-90 transition-transform hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors rounded-xl flex flex-col items-center justify-center text-on-surface-variant dark:text-outline">
+<div class="flex flex-col items-center justify-center rounded-full px-4 py-1 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Assets</span>
+</button>
+<!-- Tab: Audit (INACTIVE) -->
+<button class="flex flex-col items-center justify-center flex-1 py-1 active:scale-90 transition-transform hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors rounded-xl flex flex-col items-center justify-center text-on-surface-variant dark:text-outline">
+<div class="flex flex-col items-center justify-center rounded-full px-4 py-1 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">fact_check</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Audit</span>
+</button>
+<!-- Tab: Reports (INACTIVE) -->
+<button class="flex flex-col items-center justify-center flex-1 py-1 active:scale-90 transition-transform hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors rounded-xl flex flex-col items-center justify-center text-on-surface-variant dark:text-outline">
+<div class="flex flex-col items-center justify-center rounded-full px-4 py-1 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Reports</span>
+</button>
+<!-- Tab: Profile (INACTIVE) -->
+<button class="flex flex-col items-center justify-center flex-1 py-1 active:scale-90 transition-transform hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors rounded-xl flex flex-col items-center justify-center text-on-surface-variant dark:text-outline">
+<div class="flex flex-col items-center justify-center rounded-full px-4 py-1 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Profile</span>
+</button>
+</nav>
+</body></html>

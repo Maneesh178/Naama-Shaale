@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - Namma-Shaale Inventory</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#00522d",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#00210f",
+                        "on-background": "#0b1c30",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed-variant": "#00468c",
+                        "tertiary": "#663f00",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#005db6",
+                        "primary": "#00478d",
+                        "outline-variant": "#c2c6d4",
+                        "secondary": "#006d3d",
+                        "on-secondary-container": "#047240",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#424752",
+                        "secondary-fixed": "#9af6b8",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#7ed99e",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#213145",
+                        "background": "#f8f9ff",
+                        "inverse-primary": "#a9c7ff",
+                        "on-primary-container": "#c8daff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "outline": "#727783",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-container": "#97f3b5",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#ffd29e",
+                        "tertiary-container": "#865400",
+                        "primary-container": "#005eb8",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "20px",
+                        "touch-target-min": "48px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "headline-md": ["Public Sans"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Public Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-md": ["11px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-lg text-body-lg">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low dark:bg-surface-container shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile h-touch-target-min w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A professional portrait of an Indian female school teacher in her 40s, looking warmly at the camera. She is wearing a simple, elegant saree. The lighting is bright, soft, and natural, creating a trustworthy and approachable mood. The background is a slightly blurred, modern classroom setting, adhering to a clean, bright aesthetic suitable for a government-tech application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_jyams1wdO3YCb3t-NNvk8LvR8fCCxjlx67VuKGwlSN0JmtRSMvQ2phoRAnJLGe4L29MSjJw2WROvtmrzRplsn8yMGGN1x-qvjLNhkyy1zyIq6eiRGb7c5LqM99etAi0CssiKEAy1KwOQBCbjOn0OvOTgHVd6ylppR78fSfmTZHYzc6RnR2KwGHTdSyAnMetK9gwK_7j10wK26brBcqjrOgKpZf3r9rHgjY6IzKaG8R9CxNe3ILGnjcfA0HhQMOkDj5ZGW2O-exI"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Namma-Shaale Inventory</h1>
+</div>
+<button aria-label="Notifications" class="h-touch-target-min w-touch-target-min flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors active:scale-95 text-on-surface-variant dark:text-outline">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-3xl mx-auto pt-[80px] pb-[100px] px-margin-mobile flex flex-col gap-6">
+<!-- Profile Header -->
+<section class="flex flex-col items-center justify-center pt-8 pb-4 text-center">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+<img alt="Mrs. Sharma" class="w-full h-full object-cover" data-alt="A close-up professional portrait of an Indian female school teacher, smiling confidently. She is wearing a neat, understated saree. The lighting is bright and evenly distributed, highlighting her friendly expression. The background is a soft, out-of-focus light gray wall, reflecting a clean, modern, and reliable aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQw0NuzdwZlhntkXCu8vqEaMxI4Eo9VAt9jauJRdjSlz6ndaYKQRMHo_aq_IUL3tIsxuUpBbNi_exvbXTbHzZrps_yA8UAOpvHkr2_P6Vmjr0hQSu7z-caiIhRhf2uP__YBBwU9Wmgt15igPRbiz9rLwzWEw3QQfTpYWu0EtOzOOUk5LoM0jtAnkUD5DFpt6VqFo9Ay2LauDoAVlsWdUI085PAcF70-PdJ9IqQ-x3vNvY41jmOlpoRzZxkI7GVGRHzuqRr3MQlaoo"/>
+</div>
+<button aria-label="Edit Profile Picture" class="absolute bottom-0 right-0 w-8 h-8 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-md border-2 border-surface">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-1">Mrs. Sharma</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Senior Teacher / Inventory Lead</p>
+</section>
+<!-- School Information Card -->
+<section class="bg-surface-container-low rounded-xl p-card-padding shadow-[0_2px_4px_rgba(0,0,0,0.04)] flex flex-col gap-3">
+<h3 class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Assigned School</h3>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Government Higher Primary School</p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Block 4, District Center
+                    </p>
+</div>
+</div>
+</section>
+<!-- Settings List -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_2px_4px_rgba(0,0,0,0.04)] overflow-hidden border border-surface-container-high">
+<ul class="flex flex-col">
+<li>
+<button class="w-full flex items-center justify-between p-4 min-h-touch-target-min hover:bg-surface-container-low transition-colors border-b border-surface-container-highest last:border-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+<span class="font-body-lg text-body-lg text-on-surface">Personal Info</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center justify-between p-4 min-h-touch-target-min hover:bg-surface-container-low transition-colors border-b border-surface-container-highest last:border-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">location_city</span>
+<span class="font-body-lg text-body-lg text-on-surface">My School</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center justify-between p-4 min-h-touch-target-min hover:bg-surface-container-low transition-colors border-b border-surface-container-highest last:border-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="font-body-lg text-body-lg text-on-surface">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center justify-between p-4 min-h-touch-target-min hover:bg-surface-container-low transition-colors border-b border-surface-container-highest last:border-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">translate</span>
+<span class="font-body-lg text-body-lg text-on-surface">Language</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface-variant">English</span>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</button>
+</li>
+<li>
+<div class="w-full flex items-center justify-between p-4 min-h-touch-target-min border-b border-surface-container-highest last:border-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+<span class="font-body-lg text-body-lg text-on-surface">Dark Mode</span>
+</div>
+<!-- Toggle Switch -->
+<button aria-checked="false" class="bg-surface-container-highest relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none" role="switch" type="button">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-outline transition duration-200 ease-in-out shadow ring-0"></span>
+</button>
+</div>
+</li>
+</ul>
+</section>
+<!-- Logout Action -->
+<section class="mt-4">
+<button class="w-full flex items-center justify-center gap-2 p-4 min-h-touch-target-min bg-surface-container-lowest rounded-xl hover:bg-error-container transition-colors text-error shadow-[0_2px_4px_rgba(0,0,0,0.04)] border border-surface-container-high">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-title-lg text-title-lg">Logout</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-background rounded-t-xl shadow-[0_-1px_4px_rgba(0,0,0,0.04)] md:hidden">
+<div class="flex justify-around items-center px-2 py-2 pb-safe w-full">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 px-2 py-1 rounded-xl min-w-[64px]">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 px-2 py-1 rounded-xl min-w-[64px]">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-label-lg text-label-lg">Assets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 px-2 py-1 rounded-xl min-w-[64px]">
+<span class="material-symbols-outlined mb-1">fact_check</span>
+<span class="font-label-lg text-label-lg">Audit</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 px-2 py-1 rounded-xl min-w-[64px]">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span class="font-label-lg text-label-lg">Reports</span>
+</button>
+<!-- Active State -->
+<button class="flex flex-col items-center justify-center hover:bg-surface-variant dark:hover:bg-surface-variant transition-colors active:scale-90 min-w-[64px]">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-5 py-1 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

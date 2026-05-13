@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Namma-Shaale Inventory - Dashboard (Dark Mode)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Public+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#00522d",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#00210f",
+                        "on-background": "#0b1c30",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed-variant": "#00468c",
+                        "tertiary": "#663f00",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#005db6",
+                        "primary": "#00478d",
+                        "outline-variant": "#c2c6d4",
+                        "secondary": "#006d3d",
+                        "on-secondary-container": "#047240",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#424752",
+                        "secondary-fixed": "#9af6b8",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#7ed99e",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#213145",
+                        "background": "#f8f9ff",
+                        "inverse-primary": "#a9c7ff",
+                        "on-primary-container": "#c8daff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "outline": "#727783",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-container": "#97f3b5",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#ffd29e",
+                        "tertiary-container": "#865400",
+                        "primary-container": "#005eb8",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        
+                        // Overriding for strict Dark Mode Request based on prompt constraints
+                        // Realistically, Material 3 dark tokens would be generated, but I must follow instructions.
+                        "background-dark": "#121212",
+                        "surface-dark": "#1E1E1E",
+                        "surface-container-dark": "#2C2C2C",
+                        "on-surface-dark": "#E3E2E6",
+                        "on-surface-variant-dark": "#C4C6D0",
+                        "primary-dark": "#A9C7FF",
+                        "on-primary-dark": "#002F65",
+                        "primary-container-dark": "#00478D",
+                        "on-primary-container-dark": "#D6E3FF",
+                        "secondary-dark": "#7ED99E",
+                        "on-secondary-dark": "#00391D",
+                        "secondary-container-dark": "#00522D",
+                        "on-secondary-container-dark": "#9AF6B8",
+                        "error-dark": "#FFB4AB",
+                        "on-error-dark": "#690005",
+                        "error-container-dark": "#93000A",
+                        "on-error-container-dark": "#FFDAD6",
+                        "outline-dark": "#8E9099"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "20px",
+                        "touch-target-min": "48px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Public Sans", "sans-serif"],
+                        "label-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg": ["Public Sans", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-qr-pattern {
+                background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+                background-size: 16px 16px;
+            }
+        }
+        
+        /* Direct mapping to the requested dark mode overrides to force the visual styling while maintaining valid classes */
+        .dark .bg-background { background-color: theme('colors.background-dark'); }
+        .dark .bg-surface { background-color: theme('colors.surface-dark'); }
+        .dark .bg-surface-container { background-color: theme('colors.surface-container-dark'); }
+        .dark .text-on-surface { color: theme('colors.on-surface-dark'); }
+        .dark .text-on-surface-variant { color: theme('colors.on-surface-variant-dark'); }
+        .dark .text-primary { color: theme('colors.primary-dark'); }
+        .dark .bg-primary-container { background-color: theme('colors.primary-container-dark'); }
+        .dark .text-on-primary-container { color: theme('colors.on-primary-container-dark'); }
+        .dark .bg-primary { background-color: theme('colors.primary-dark'); }
+        .dark .text-on-primary { color: theme('colors.on-primary-dark'); }
+        .dark .bg-secondary-container { background-color: theme('colors.secondary-container-dark'); }
+        .dark .text-on-secondary-container { color: theme('colors.on-secondary-container-dark'); }
+        .dark .border-outline { border-color: theme('colors.outline-dark'); }
+        .dark .bg-error-container { background-color: theme('colors.error-container-dark'); }
+        .dark .text-on-error-container { color: theme('colors.on-error-container-dark'); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-lg text-body-lg min-h-screen pb-24 md:pb-0 pt-[72px]">
+<!-- TopAppBar Component -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dark shadow-sm h-touch-target-min flex items-center justify-between px-margin-mobile max-w-7xl mx-auto left-0 right-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container dark:bg-primary-container flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-primary-container dark:text-on-primary-container">school</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-dark tracking-tight">Namma-Shaale Inventory</h1>
+</div>
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-container-dark transition-colors active:scale-95 text-on-surface-variant dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile py-6 space-y-8">
+<!-- Header / Welcome Section -->
+<section class="relative bg-surface dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-outline/10 dark:border-outline-dark overflow-hidden">
+<div class="absolute inset-0 bg-qr-pattern opacity-50"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg text-on-surface dark:text-on-surface-dark mb-2">Welcome Back, Admin</h2>
+<p class="text-on-surface-variant dark:text-on-surface-variant-dark font-body-lg text-body-lg">Here's the current status of your school's inventory.</p>
+</div>
+<div class="relative z-10 mt-6 flex flex-wrap gap-4">
+<button class="bg-primary dark:bg-primary-dark text-on-primary dark:text-on-primary-dark px-6 py-3 rounded-full font-label-lg text-label-lg flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-sm h-[56px]">
+<span class="material-symbols-outlined">add_circle</span>
+                    Add Asset
+                </button>
+<button class="border border-outline dark:border-outline-dark text-primary dark:text-primary-dark px-6 py-3 rounded-full font-label-lg text-label-lg flex items-center gap-2 hover:bg-surface-container-highest dark:hover:bg-surface-container-dark active:scale-95 transition-all h-[56px]">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+                    Scan Asset
+                </button>
+</div>
+</section>
+<!-- Summary Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Total Assets -->
+<div class="bg-surface dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-outline/10 dark:border-outline-dark flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container dark:bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container dark:text-on-primary-container">inventory_2</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant-dark">more_vert</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant-dark mb-1">Total Assets</p>
+<p class="font-display-lg text-display-lg text-on-surface dark:text-on-surface-dark">1,248</p>
+</div>
+</div>
+<!-- Needing Audit -->
+<div class="bg-surface dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-outline/10 dark:border-outline-dark flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container dark:bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container dark:text-on-secondary-container">fact_check</span>
+</div>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant-dark mb-1">Pending Audit</p>
+<div class="flex items-baseline gap-2">
+<p class="font-display-lg text-display-lg text-on-surface dark:text-on-surface-dark">42</p>
+<span class="font-label-md text-label-md text-secondary dark:text-secondary-dark bg-secondary-container dark:bg-secondary-container px-2 py-0.5 rounded-full">+3 this week</span>
+</div>
+</div>
+</div>
+<!-- Issues / Repairs -->
+<div class="bg-surface dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-outline/10 dark:border-outline-dark flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-error-container dark:bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-error-container dark:text-on-error-container">build</span>
+</div>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant-dark mb-1">Needs Repair/Missing</p>
+<p class="font-display-lg text-display-lg text-on-surface dark:text-on-surface-dark text-error dark:text-error-dark">15</p>
+</div>
+</div>
+</section>
+<!-- Audit Progress & Recent Activity -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Audit Progress Ring (Simplified CSS Representation) -->
+<div class="bg-surface dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-outline/10 dark:border-outline-dark">
+<h3 class="font-title-lg text-title-lg text-on-surface dark:text-on-surface-dark mb-6">Annual Audit Progress</h3>
+<div class="flex items-center justify-center py-4">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- Background Circle -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container dark:text-surface-container-dark" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress Circle (75%) -->
+<circle class="text-primary dark:text-primary-dark rounded-full" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-on-surface dark:text-on-surface-dark">75%</span>
+<span class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant-dark">Completed</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-center">
+<div>
+<p class="font-title-lg text-title-lg text-on-surface dark:text-on-surface-dark">936</p>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant-dark">Audited</p>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-on-surface dark:text-on-surface-dark">312</p>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant-dark">Remaining</p>
+</div>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="bg-surface dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-outline/10 dark:border-outline-dark">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-title-lg text-title-lg text-on-surface dark:text-on-surface-dark">Recent Activity</h3>
+<button class="font-label-lg text-label-lg text-primary dark:text-primary-dark">View All</button>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-low dark:hover:bg-surface-container-dark transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest dark:bg-surface-container-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary dark:text-primary-dark">laptop_mac</span>
+</div>
+<div class="flex-1">
+<p class="font-body-lg text-body-lg text-on-surface dark:text-on-surface-dark font-medium">Dell Latitude 3420</p>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant-dark">Added to IT Lab</p>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant-dark">2h ago</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-low dark:hover:bg-surface-container-dark transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest dark:bg-surface-container-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-dark">chair_alt</span>
+</div>
+<div class="flex-1">
+<p class="font-body-lg text-body-lg text-on-surface dark:text-on-surface-dark font-medium">Student Desks (x15)</p>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant-dark">Audited in Room 101</p>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant-dark">5h ago</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-low dark:hover:bg-surface-container-dark transition-colors">
+<div class="w-12 h-12 rounded-lg bg-error-container dark:bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-error-container dark:text-on-error-container">warning</span>
+</div>
+<div class="flex-1">
+<p class="font-body-lg text-body-lg text-on-surface dark:text-on-surface-dark font-medium">Projector Epson X39</p>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant-dark">Status changed to Needs Repair</p>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant-dark">1d ago</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Component (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-dark shadow-[0_-1px_4px_rgba(0,0,0,0.04)] dark:shadow-none dark:border-t dark:border-outline-dark md:hidden left-0 right-0">
+<div class="flex justify-around items-center px-2 py-2 pb-safe">
+<!-- Active Tab: Home -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
+<span class="font-label-md text-label-md mt-1 hidden">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-surface-variant dark:hover:bg-surface-container-dark transition-colors active:scale-90 rounded-full w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md mt-1 hidden">Assets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-surface-variant dark:hover:bg-surface-container-dark transition-colors active:scale-90 rounded-full w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span class="font-label-md text-label-md mt-1 hidden">Audit</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-surface-variant dark:hover:bg-surface-container-dark transition-colors active:scale-90 rounded-full w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md mt-1 hidden">Reports</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-surface-variant dark:hover:bg-surface-container-dark transition-colors active:scale-90 rounded-full w-touch-target-min h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1 hidden">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>
